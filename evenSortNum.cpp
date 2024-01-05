@@ -20,12 +20,10 @@ std::list<int> SortElementList(
         // set the index of sortedList to coutnerOne
         auto sortedListCounterOne = sortedList.begin();
         std::advance(sortedListCounterOne, counterOne);
-        std::cout << "counter1=" << *sortedListCounterOne << std::endl;
         for (int counterTwo = 1; counterTwo < sortedList.size(); counterTwo++) {
             // set the index of sortedList to coutnerTwo
             auto sortedListCounterTwo = sortedList.begin();
             std::advance(sortedListCounterTwo, counterTwo);
-            std::cout << "counter2=" << *sortedListCounterTwo << std::endl;
 
             // if sortedListCounterOne >= sortedListCounterTwo :
             // then swap their values
@@ -57,7 +55,7 @@ void SortListMain() {
         do {
         // get userIntStrOne
         std::cout << "First Int List : Enter your integer";
-        std::cout << "here (type stop to exit):";
+        std::cout << "here (type stop to exit): ";
         std::cin >> userIntStrOne;
 
         try {
@@ -81,7 +79,7 @@ void SortListMain() {
     do {
         // get userIntStrTwo
         std::cout << "Second Int List : Enter ";
-        std::cout << "your integer here (type stop to exit):";
+        std::cout << "your integer here (type stop to exit): ";
         std::cin >> userIntStrTwo;
 
         try {
@@ -106,7 +104,7 @@ void SortListMain() {
     std::list<int> sortedListMain = SortElementList(intListOne, intListTwo);
 
     // display the sorted list using a for each loop
-    std::cout << "The sorted, combined list is ";
+    std::cout << "The sorted, combined list is " << std::endl;
     for (int aNum : sortedListMain) {
         std::cout << aNum << std::endl;
     }
@@ -135,7 +133,7 @@ void EvenNumListMain() {
 
     do {
         // get userIntStr
-        std::cout << "Enter your number here";
+        std::cout << "Enter your number here: ";
         std::cin >> userIntStr;
 
         try {
