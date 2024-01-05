@@ -28,7 +28,8 @@ std::list<int> SortElementList(
             // if sortedListCounterOne >= sortedListCounterTwo :
             // then swap their values
             if (*sortedListCounterOne >= *sortedListCounterTwo) {
-                *sortedListCounterOne, *sortedListCounterTwo = *sortedListCounterTwo, *sortedListCounterOne;
+                *sortedListCounterOne, *sortedListCounterTwo
+                = *sortedListCounterTwo, *sortedListCounterOne;
             }
         }
     }
@@ -169,7 +170,7 @@ int main() {
     // get userChoice
     std::cout << "This program either shows all the even numbers ";
     std::cout << "in a list(Press 1 for this) or sorts two lists";
-    std::cout << " in numerical order(Press 2 for this)."; 
+    std::cout << " in numerical order(Press 2 for this).";
     std::cin >> userChoice;
 
     // if userChoice == 1, then call EvenNumListMain
