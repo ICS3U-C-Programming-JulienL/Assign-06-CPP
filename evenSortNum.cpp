@@ -9,15 +9,15 @@
 
 std::list<int> SortElementList(
     std::list<int> listOne,
-    std::list<int> sortedList
-) {
+    std::list<int> sortedList) {
     // combine the two lists into sortedList
     sortedList.merge(listOne);
-
 
     // use a nested for loop to find each combination of numbers
     for (int counterOne = 0; counterOne < sortedList.size(); counterOne++) {
         // set the index of sortedList to coutnerOne
+        // Source :
+        // https://stackoverflow.com/questions/16747591/
         auto sortedListCounterOne = sortedList.begin();
         std::advance(sortedListCounterOne, counterOne);
         for (int counterTwo = 1; counterTwo < sortedList.size(); counterTwo++) {
@@ -28,8 +28,7 @@ std::list<int> SortElementList(
             // if sortedListCounterOne >= sortedListCounterTwo :
             // then swap their values
             if (*sortedListCounterOne >= *sortedListCounterTwo) {
-                *sortedListCounterOne, *sortedListCounterTwo =
-                *sortedListCounterTwo, *sortedListCounterOne;
+                *sortedListCounterOne, *sortedListCounterTwo = *sortedListCounterTwo, *sortedListCounterOne;
             }
         }
     }
@@ -48,11 +47,8 @@ void SortListMain() {
 
     // tell the user what the program does
     std::cout << "This program displays the combined, sorted";
-    std::cout << "list of the user's two integer lists." << std::endl;
-    std::cout << "Make sure that both your lists are ";
-    std::cout<< "sorted in numerical order." << std::endl;
-
-        do {
+    std::cout << " list of the user's two integer lists." << std::endl;
+    do {
         // get userIntStrOne
         std::cout << "First Int List : Enter your integer";
         std::cout << "here (type stop to exit): ";
@@ -71,7 +67,7 @@ void SortListMain() {
             } else {
                 // otherwise, tell the user to enter a valid int
                 std::cout << userIntStrOne
-                << " is not a valid integer" << std::endl;
+                          << " is not a valid integer" << std::endl;
             }
         }
     } while (userIntStrOne != "stop");
@@ -95,7 +91,7 @@ void SortListMain() {
             } else {
                 // otherwise, tell the user to enter a valid int
                 std::cout << userIntStrTwo
-                << " is not a valid integer" << std::endl;
+                          << " is not a valid integer" << std::endl;
             }
         }
     } while (userIntStrTwo != "stop");
@@ -131,16 +127,20 @@ void EvenNumListMain() {
     int userInt;
     std::list<int> listOfInt;
 
+    // display what the program does
+    std::cout << "This program displays all the even numbers ";
+    std::cout << "in the user's list of integers." << std::endl;
+
     do {
         // get userIntStr
-        std::cout << "Enter your number here: ";
+        std::cout << "Enter your number here (type stop to exit): ";
         std::cin >> userIntStr;
 
         try {
             // convert userIntStr to an int
             userInt = std::stoi(userIntStr);
 
-            // convert listOfInt to userInt
+            // append userInt to listOfInt
             listOfInt.push_back(userInt);
         } catch (std::invalid_argument) {
             // if userIntStr == "stop", then break
@@ -149,11 +149,11 @@ void EvenNumListMain() {
             } else {
                 // otherwise, tell the user to enter a valid int
                 std::cout << userIntStr
-                << " is not a valid integer" << std::endl;
+                          << " is not a valid integer" << std::endl;
             }
         }
     } while (userIntStr != "stop");
-    // call the evenNumListFunction
+    // call the evenNumList Function
     std::list<int> evenList = EvenNumList(listOfInt);
 
     // display evenList using a for each loop
@@ -169,7 +169,7 @@ int main() {
     // get userChoice
     std::cout << "This program either shows all the even numbers ";
     std::cout << "in a list(Press 1 for this) or sorts two lists";
-    std::cout << " in numerical order(Press 2 for this).";
+    std::cout << " in numerical order(Press 2 for this)."; 
     std::cin >> userChoice;
 
     // if userChoice == 1, then call EvenNumListMain
@@ -180,6 +180,6 @@ int main() {
         SortListMain();
     } else {
         // tell the user to enter 1 or 2
-        std::cout << "Please enter 1 or 2 as an option.";
+        std::cout << "Please enter 1 or 2 as an option." << std::endl;
     }
 }
